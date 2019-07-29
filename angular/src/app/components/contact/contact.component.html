@@ -1,0 +1,138 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<section id="mid2">
+
+</section>
+
+<section id="contentContact">
+    <div id="title">   
+      <h2>Contact Us</h2>
+    </div>
+    <div id="CompContact">
+        <div class="row ">
+                <div class="col-6 minCont">
+                  <div class="container ">
+                    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+                      <div id="title" >   
+                        <h3>Email Us</h3>
+                      </div>
+                      <div class="form-group">
+                          <label for="name">Full Name</label>
+                          <input name="name" type="text" class="form-control" [formControl]="nameCtrl" required minlength="4">
+                            
+                          <div *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)"
+                                  class="alert alert-danger">
+  
+                                <div *ngIf="nameCtrl.errors.required">
+                                 Name is Required
+                                </div>
+
+                                <div *ngIf="nameCtrl.errors.minlength">
+                                  Name must be at least 4 characters long.
+                                </div>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="company">Company</label>
+                        <input name="company" type="text" class="form-control" [formControl]="companyCtrl" required>
+                          
+                        <div *ngIf="companyCtrl.invalid && (companyCtrl.dirty || companyCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="companyCtrl.errors.required">
+                                Company is Required
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" class="form-control" [formControl]="emailCtrl" required minlength="10">
+                          
+                        <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="emailCtrl.errors.required">
+                                Email is Required
+                              </div>
+                              <div *ngIf="emailCtrl.errors.minlength">
+                                Email must be at least 10 characters long.
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input name="phone" type="text" class="form-control" [formControl]="phoneCtrl" required minlength="10">
+                          
+                        <div *ngIf="phoneCtrl.invalid && (phoneCtrl.dirty || phoneCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="phoneCtrl.errors.required">
+                                Phone is Required
+                              </div>
+                              <div *ngIf="phoneCtrl.errors.minlength">
+                                Phone must be at least 10 characters long.
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" type="text" rows="5" class="form-control" [formControl]="messageCtrl" required placeholder="Type..." minlength="4">
+                        </textarea>
+                        <div *ngIf="messageCtrl.invalid && (messageCtrl.dirty || messageCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="messageCtrl.errors.required">
+                                A message is Required
+                              </div>
+                              <div *ngIf="messageCtrl.errors.minlength">
+                                Phone must be longer.
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <re-captcha name="captcha" required [formControl]="captchaCtrl" siteKey="6LfNxqgUAAAAAOtZdmImEz-cChz3b3R75TmwdOTL">
+                            </re-captcha>
+                          </div>
+                      </div> 
+                    </form>
+                    <button type="submit" class="btn btn-success" [disabled]="!emailForm.valid" (click)="onSubmit(); emailForm.reset()" id="btnCaptcha">Send</button>                                                                                 
+                 </div>
+                </div> 
+                <div class="col-6 minCont">
+                        <div class="container">
+                            <div id="title" >   
+                                    <h3>Reach Out</h3>
+                            </div>
+                            <div class="col-4 Contact">
+                                    <i class="fas fa-map-marker-alt fa-3x icon"></i>
+                                    <h4 class="font-weight-bold">Office Address</h4>
+                                    <p>2749 NW 19th Street</p>
+                                    <p>Pompano Beach, FL.</p>
+                                    <p>33069, United States.</p>
+                            </div>
+                            <div class="col-4 Contact">
+                                    <i class="fas fa-phone fa-3x icon"></i>
+                                    <h4 class="font-weight-bold">Phone Number</h4>
+                                    <p>Main: (754) 802-9210</p>
+                                    <p><strong style="color: red;">AOG:</strong> (954) 864-1136</p>
+                                    <p>Fax: (754) 703-7249</p>
+                            </div>
+                            <div class="col-4 Contact">
+                                    <i class="far fa-calendar-alt fa-3x icon"></i>
+                                    <h4 class="font-weight-bold">Schedule</h4>
+                                    <p>Mon-Fri 8:00am to 6pm</p>
+                                    <p><strong style="color: red;">AOG</strong> 24/7/365</p>
+                            </div>
+                                <div class="col-12">
+                                        <img src="assets\img\warehouse1.jpg" alt="Toucan Air" style="width: 100%;"/>
+                                </div>
+                        </div>                        
+                </div>
+        </div>   
+        <div class="row" >
+            <div class="col-12"  >
+                <agm-map id="contentMap" [zoom]="15" [latitude]="latitude" [longitude]="longitude" [fullscreenControl]='true' [mapTypeControl]='true' >
+                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                </agm-map >   
+            </div> 
+        </div>
+    </div>  
+</section>

@@ -1,0 +1,217 @@
+<!--Oswaldo
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">-->
+<!--Arimo-->
+<link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+<!--Fira Sans Condensed
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">-->
+<!--Asap condensed
+<link href="https://fonts.googleapis.com/css?family=Asap+Condensed&display=swap" rel="stylesheet">-->
+<!--Karma
+<link href="https://fonts.googleapis.com/css?family=Karma&display=swap" rel="stylesheet">-->
+<!--scheherezade
+<link href="https://fonts.googleapis.com/css?family=Scheherazade&display=swap" rel="stylesheet">-->
+<!--Forum
+<link href="https://fonts.googleapis.com/css?family=Forum&display=swap" rel="stylesheet">-->
+<!--Halant
+<link href="https://fonts.googleapis.com/css?family=Halant&display=swap" rel="stylesheet">-->
+<!--Haranna
+<link href="https://fonts.googleapis.com/css?family=Suranna&display=swap" rel="stylesheet">-->
+<!--Arsenal-->
+<header class="animated fadeInDown" class="banner">  
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" id="logo" [routerLink]="['']">
+      <img src="assets\img\logo.png"> 
+      <span> TOUCAN AIR</span>
+      </a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleNavbar()" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-ellipsis-v"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"
+      [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav mr-auto" data-toggle="collapse" data-target=".nav-collapse">
+            <li class="nav-item dropdown center" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">About</a>
+                <div class="dropdown-menu" >
+                  <a class="dropdown-item" routerLink="/about" >Toucan Air </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" routerLink="/team" >Our Team</a>
+                </div>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link" routerLink="/quality"  >Quality</a>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" routerLink="/shopForParts" >Shop for Parts</a>
+                
+              </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link" routerLink="/contact" >Contact</a>
+            </li>
+            <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0" id="search-nav">
+              <input class="form-control mr-sm-2 searchNav" type="search" placeholder="Search" aria-label="Search" style="font-size: 14px;">
+              <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="fas fa-search"></i></button>
+            </form>
+            </li>
+            <li class="nav-item" id="login">
+              <!-- <a class="nav-link" routerLink=" " (click)="ShowLogin()" >Log In</a> -->
+            </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+<ng-template #template>
+            <div class="modalHeader" >
+              <h4>Please Sign in</h4>
+              <i class="fas fa-plane" id="avatar"></i>
+              <button #btnClose type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="HideLogin()" >
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modalBody">
+                <form>
+                  <p>What is your Username or Email Address?</p>
+                  <input type="text" name="user" placeholder="ToucanAir or toucanair@gmail.com"  #userN>
+                  <small id="emailHelp" class="form-text text-muted">Have a Toucan Air account? You can see better offers.</small>
+                  <p>What is  your Password?</p>
+                  <div id="passw">
+                    <input type="password" name="passw" placeholder="Password" #passW>
+                    <a id="forgot" href="#" data-toggle="collapse">Forgot Password?</a>
+                  </div>
+                </form>
+                  <div id="email" class="collapse">
+                      <input type="text" name="VerifEmail" placeholder="Introduce your Verfication Email">
+                  </div>
+                  <small id="regst" class="form-text text-muted">
+                      <a [routerLink]="['/Register']" (click)="HideLogin()" style="font-weight: bold; color:black;">NEW USER? Click to create your account!</a>
+                  </small>
+                  <small id="terms" class="form-text text-muted">
+                      <a href="#">Terms of Use </a>&<a href="#"> Privacy Policy</a>
+                  </small>
+            </div>
+            <div class="modalFooter">
+                  <button type="button" class="btn btn-danger" id="close-modal" data-dismiss="modal" (click)="HideLogin()">Cancel</button>
+                  <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="ValidateLogin(userN.value,passW.value)" [routerLink]="['/LogIn']">Continue</button>
+            </div>        
+</ng-template>
+
+<section class="web_homePage" >  
+  <router-outlet></router-outlet>   
+</section>  
+
+<footer>
+    <div class="socialcontainer">
+        <ul class="icons">
+          <li><a id=twitter class="fab fa-twitter fa-2x" href="https://twitter.com/ToucanAir" target="_blank"></a></li>
+          <li><a id=facebook class="fab fa-facebook fa-2x" href="https://www.facebook.com/TOUCANAIR/" target="_blank"></a></li>
+          <li><a id=insta class="fab fa-instagram fa-2x" href="https://www.instagram.com/toucanairllc/" target="_blank"></a></li>
+          <li><a id=mail class="far fa-envelope fa-2x" data-toggle="modal" data-target="#exampleModalEmail" ></a></li>
+          <li><a id=linkedin class="fab fa-linkedin fa-2x" href="https://www.linkedin.com/company/toucan-air/" target="_blank"></a></li> 
+        </ul>
+      </div>
+      <div class="modal fade" id="exampleModalEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()" style="text-align: left;">
+                      <div class="form-group">
+                          <div id="title" >   
+                              <h3>Email Us</h3>
+                            </div>
+                          <label for="name">Full Name</label>
+                          <input name="name" type="text" class="form-control" [formControl]="nameCtrl" required minlength="4">
+                            
+                          <div *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)"
+                                  class="alert alert-danger">
+  
+                                <div *ngIf="nameCtrl.errors.required">
+                                 Name is Required
+                                </div>
+
+                                <div *ngIf="nameCtrl.errors.minlength">
+                                  Name must be at least 4 characters long.
+                                </div>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="company">Company</label>
+                        <input name="company" type="text" class="form-control" [formControl]="companyCtrl" required>
+                          
+                        <div *ngIf="companyCtrl.invalid && (companyCtrl.dirty || companyCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="companyCtrl.errors.required">
+                                Company is Required
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" class="form-control" [formControl]="emailCtrl" required minlength="10">
+                          
+                        <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="emailCtrl.errors.required">
+                                Email is Required
+                              </div>
+                              <div *ngIf="emailCtrl.errors.minlength">
+                                Email must be at least 10 characters long.
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input name="phone" type="text" class="form-control" [formControl]="phoneCtrl" required minlength="10">
+                          
+                        <div *ngIf="phoneCtrl.invalid && (phoneCtrl.dirty || phoneCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="phoneCtrl.errors.required">
+                                Phone is Required
+                              </div>
+                              <div *ngIf="phoneCtrl.errors.minlength">
+                                Phone must be at least 10 characters long.
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" type="text" rows="5" class="form-control" [formControl]="messageCtrl" required placeholder="Type..." minlength="4">
+                        </textarea>
+                        <div *ngIf="messageCtrl.invalid && (messageCtrl.dirty || messageCtrl.touched)"
+                                class="alert alert-danger">
+
+                              <div *ngIf="messageCtrl.errors.required">
+                                A message is Required
+                              </div>
+                              <div *ngIf="messageCtrl.errors.minlength">
+                                Phone must be longer.
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <re-captcha name="captcha" required [formControl]="captchaCtrl" siteKey="6LfNxqgUAAAAAOtZdmImEz-cChz3b3R75TmwdOTL">
+                            </re-captcha>
+                          </div>
+                      </div> 
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" [disabled]="!emailForm.valid" (click)="onSubmit(); emailForm.reset()" id="btnCaptcha">Send</button>
+                  </div>
+            </div>
+          </div>
+        </div> 
+      <div class="copyright">
+       &copy;Toucan Air. 2019 All Rights Reserved.
+    </div>
+</footer>
+
