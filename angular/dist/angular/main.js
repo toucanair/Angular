@@ -918,7 +918,7 @@ var MessageService = /** @class */ (function () {
         this.http = http;
     }
     MessageService.prototype.sendMessage = function (body) {
-        return this.http.post('http://localhost:3000/formulario', body);
+        return this.http.post('http://ec2-18-217-17-68.us-east-2.compute.amazonaws.com/toucanair', { body: body }, { responseType: 'text' });
     };
     MessageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
