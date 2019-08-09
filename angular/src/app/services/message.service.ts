@@ -12,6 +12,6 @@ export class MessageService {
   constructor(private http: HttpClient) { }
 
   sendMessage(body){
-    return this.http.post('http://ec2-18-217-17-68.us-east-2.compute.amazonaws.com/toucanair',{body},{responseType: 'text'});
+    return this.http.post('http://ec2-18-217-17-68.us-east-2.compute.amazonaws.com:3000/formulario',body);
   }
 }

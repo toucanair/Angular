@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
     
     this.nameCtrl = new FormControl('', [Validators.required, Validators.minLength(4)]);
     this.companyCtrl = new FormControl('', Validators.required);
-    this.emailCtrl = new FormControl('', [Validators.required, Validators.minLength(10)]);
+    this.emailCtrl = new FormControl('', [Validators.required, Validators.email]);
     this.phoneCtrl = new FormControl('', [Validators.required, Validators.minLength(10)]);
     this.messageCtrl = new FormControl('', [Validators.required, Validators.minLength(4)]);
     this.captchaCtrl = new FormControl();
