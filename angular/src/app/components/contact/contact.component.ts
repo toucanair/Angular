@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../../services/message.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact',
@@ -24,24 +26,22 @@ export class ContactComponent implements OnInit {
   
   resolved(captchaResponse: string) {
     console.log('Resolved captcha with response: ${captchaResponse}:');
-    alert("HOLISme valide")
+   
   }
 
   onSubmit(){
-    
     console.log(this.emailForm.value);
     this.MessageService.sendMessage(this.emailForm.value).subscribe(() => { 
-      alert("Mensaje enviado correctamente")})
+      Swal.fire({
+        type: 'success',
+        title: 'Your Message was Sent',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    })
   };
 
   constructor(public MessageService: MessageService)  {   }
-
-  contactForm(form){
-    console.log(form);
-    this.MessageService.sendMessage(form).subscribe(() => {
-      alert("Mensaje enviado correctamente");
-    })
-  }
 
   ngOnInit() {
     this.nameCtrl = new FormControl('', [Validators.required, Validators.minLength(4)]);

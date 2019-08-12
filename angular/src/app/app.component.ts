@@ -6,7 +6,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { UserModel } from './models/user-model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from './services/message.service';
-
+import Swal from 'sweetalert2';
 
 
 
@@ -32,14 +32,20 @@ export class AppComponent implements OnInit {
   
   resolved(captchaResponse: string) {
     console.log('Resolved captcha with response: ${captchaResponse}:');
-    alert("HOLISme valide")
   }
 
   onSubmit(){
     
     console.log(this.emailForm.value);
     this.MessageService.sendMessage(this.emailForm.value).subscribe(() => { 
-      alert("Mensaje enviado correctamente")})
+      Swal.fire({
+        type: 'success',
+        title: 'Your Message was Sent',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    
+    })
   };
 
 
@@ -149,16 +155,4 @@ export class AppComponent implements OnInit {
   
   }
 
- 
-  /*
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-     if (window.pageYOffset > 0) {
-       let element = document.getElementById('navbar');
-       element.classList.add('sticky');
-     } else {
-      let element = document.getElementById('navbar');
-        element.classList.remove('sticky'); 
-     }
-  } */
 }

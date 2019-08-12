@@ -1057,7 +1057,7 @@ header nav ul li{
 }
 
 .caption8{
-    margin-top:5%;
+    margin-top:2%;
     left: 16%;
     z-index: 3;
     color: rgb(247, 233, 233);
@@ -1071,11 +1071,13 @@ header nav ul li{
 }
 
 .coming{
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 43%;
+    width: 70%;
+    height: 70%;
 }
 .comingToucan{
-    margin-top: -250px;
+    margin-top: -140px;
     margin-left: 49%;
 }
 .LoadToucan{
@@ -1088,26 +1090,22 @@ header nav ul li{
 /**********Responsive************/
 @media screen and (max-width: 940px){
     .coming img{
-        margin-left: -30%;
-
+        margin-top: -25px;
+        width: 100px !important;
+        height: 100px !important;
     }
 
-    .comingToucan{
-        margin-top: 0-18px;
-        margin-left: 44%;
+    .comingToucan img{
+        margin-top: 60px;
+        margin-left: 15px;
+        width: 50px !important;
+        height: 50px !important;
     }
 
     .caption8{
-        margin-top: 58%;
+        margin-top: 35px;
         left: 10%;
         font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 1281px){
-
-    .caption8{
-        margin-top: 12%;
     }
 }
 
@@ -1166,22 +1164,25 @@ header nav ul li{
     background: white;  
 }
 
+.searchNav{
+    margin: auto;
+    width: 66%;
+}
+
 @media screen and (max-width: 990px){
 
     .minCont{
-        text-align: center;
-        margin: auto;
+        margin-right: 40px;
     }
-}
-
-@media screen and (max-width: 577px){
-
-    .form-control{
-        text-align: center;
-        margin: auto;
+    .searchNav{
+        margin-left: 0px;
+        margin-right: 3px;
+        width: 66% !important;
     }
     
 }
+
+
 
 
 /*************************PROFILE****************************/
