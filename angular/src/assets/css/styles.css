@@ -273,12 +273,12 @@ header nav ul li{
 
 .caption1{
     position: absolute;
-    top:86%;
+    top:82%;
     left: 52%;
     z-index: 3;
     color: rgb(8, 8, 8);
     font-family: 'Arimo', sans-serif;
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
     letter-spacing: 0.2em;
     font-style: oblique;
@@ -534,8 +534,22 @@ header nav ul li{
 
 /****************************Responsive***********************/
 @media screen and (max-width: 1330px){
-    .caption2, .caption1, .caption3, .caption9{
+    .caption2 {
         font-size: 23px;
+    }
+
+    .caption1 {
+        font-size: 23px;
+        top: 80%;
+    }
+
+    .caption3{
+        font-size: 20px;
+        top: 55%;
+    }
+
+    .caption9{
+        font-size: 20px;
     }
 }
 
@@ -1144,7 +1158,7 @@ header nav ul li{
     float: left;
     text-align: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .minCont{
     min-width: 500px;
