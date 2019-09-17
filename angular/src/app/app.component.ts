@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(){
-    
     console.log(this.emailForm.value);
     this.MessageService.sendMessage(this.emailForm.value).subscribe(() => { 
       Swal.fire({
