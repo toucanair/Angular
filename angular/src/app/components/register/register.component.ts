@@ -35,8 +35,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    /*console.log(this.registerForm.value);*/
-    this.RegisterService.insertNewUser(this.registerForm.value).subscribe(() => { 
+    console.log(this.registerForm.value);
+   // this.RegisterService.insertNewUser(this.registerForm.value).subscribe(() => { 
       Swal.fire({
         type: 'success',
         title: 'Welcome to Toucan Air',
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
         timer: 1500
       })
     
-   })
+  // })
   };
 
   constructor(
