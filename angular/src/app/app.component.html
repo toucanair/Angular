@@ -36,7 +36,7 @@
             </form>
             </li>
             <li class="nav-item" id="login">
-               <!--<a class="nav-link" routerLink=" " (click)="ShowLogin()" >Log In</a>-->
+               <a class="nav-link" (click)="ShowLogin()" >Log In</a>
             </li>
         </ul>
       </div>
@@ -44,7 +44,7 @@
 </header>
 <ng-template #template>
             <div class="modalHeader" >
-              <h4>Please Sign in</h4>
+              <h4>Welcome to Toucan Air</h4>
               <i class="fas fa-plane" id="avatar"></i>
               <button #btnClose type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="HideLogin()" >
                   <span aria-hidden="true">&times;</span>
@@ -65,7 +65,7 @@
                       <input type="text" name="VerifEmail" placeholder="Introduce your Verfication Email">
                   </div>
                   <small id="regst" class="form-text text-muted">
-                      <a [routerLink]="['/Register']" (click)="HideLogin()" style="font-weight: bold; color:black;">NEW USER? Click to create your account!</a>
+                      <a id="regstColor" data-toggle="modal" routerLink="/register" (click)="HideLogin()" >NEW USER? Click to create your account!</a>
                   </small>
                   <small id="terms" class="form-text text-muted">
                       <a href="#">Terms of Use </a>&<a href="#"> Privacy Policy</a>
@@ -73,9 +73,10 @@
             </div>
             <div class="modalFooter">
                   <button type="button" class="btn btn-danger" id="close-modal" data-dismiss="modal" (click)="HideLogin()">Cancel</button>
-                  <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="ValidateLogin(userN.value,passW.value)" [routerLink]="['/LogIn']">Continue</button>
+                  <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="ValidateLogin(userN.value,passW.value)" [routerLink]="['/login']">Continue</button>
             </div>        
 </ng-template>
+
 
 <section class="web_homePage" >  
   <router-outlet></router-outlet>   

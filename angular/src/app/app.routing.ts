@@ -6,9 +6,9 @@ import { ShopComponent } from './components/shop/shop.component';
 import { TeamComponent } from './components/team/team.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
-import { RegisterComponent } from './components/register/register.component';
 import { QualityComponent } from './components/quality/quality.component';
 
 
@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     {path: 'shopForParts', component: ShopComponent},
     {path: 'team', component: TeamComponent},
     {path: 'contact', component: ContactComponent},
-    {path: 'logIn', component: LoginComponent},
+    {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'quality', component: QualityComponent},
     {path: '**', component: ErrorComponent}

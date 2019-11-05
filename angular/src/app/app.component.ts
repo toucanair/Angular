@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { UserModel } from './models/user-model';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, Form } from '@angular/forms';
 import { MessageService } from './services/message.service';
 import Swal from 'sweetalert2';
 
@@ -28,6 +28,9 @@ export class AppComponent implements OnInit {
   emailCtrl: FormControl;
   phoneCtrl: FormControl;
   messageCtrl: FormControl;
+  countryCtrl: FormControl;
+  usrnmCtrl: FormControl;
+  passwCtrl: FormControl;
   captchaCtrl: FormControl;
   
   resolved(captchaResponse: string) {
@@ -97,10 +100,7 @@ export class AppComponent implements OnInit {
         i++;
       }
     }
-    alert(" Invalid Username ");
-
-
-
+    alert(" Invalid Username, Try again ");
   }
 
   
@@ -112,8 +112,12 @@ export class AppComponent implements OnInit {
     this.emailCtrl = new FormControl('', [Validators.required, Validators.email]);
     this.phoneCtrl = new FormControl('', [Validators.required, Validators.minLength(10)]);
     this.messageCtrl = new FormControl('', [Validators.required, Validators.minLength(4)]);
+    this.countryCtrl = new FormControl('', [Validators.required, Validators.minLength(4)]);
     this.captchaCtrl = new FormControl();
  
+
+    this.usrnmCtrl = new FormControl('', [Validators.required, Validators.minLength(5)]);
+    this.passwCtrl = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
     this.emailForm= new FormGroup({
         name: this.nameCtrl,
@@ -124,7 +128,7 @@ export class AppComponent implements OnInit {
         captcha: this.captchaCtrl
     }); 
 
-    
+    /*
     let usersObj = {
       Id: '1',
       FirstName:'Barbara',
@@ -151,7 +155,7 @@ export class AppComponent implements OnInit {
   
     this.Users.push(usersObj);
     this.Users.push(usersObj2);
-  
+      */
   }
 
 }

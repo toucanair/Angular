@@ -1,19 +1,74 @@
-<div id="RegisterF">
-  <div id="RegisterForm">
-    <div id="titleForm">   
-      <h2>Create your Account</h2>
+<div  class="register" >
+    <div class="row">
+        <div class="col-4 register-left">
+            <i class="fas fa-plane fa-5x" alt=""></i>
+            <!--<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>-->
+            <!--<img src="assets\img\toucanFondo.png" alt=""/>-->
+            <h3>Welcome!</h3>
+            <p>You are 30 seconds away from seeing the best deals</p>
+        </div>
+        <div class="col-8 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Create your Account</h3>
+                    <div class="row register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="col-md-6">
+                            <div class="form-group RegInput">
+                                <input type="text" class="form-control RegInput" placeholder="First Name *" [formControl]="firstNCtrl" required minlength="4"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control RegInput" placeholder="Last Name *" [formControl]="lastNCtrl" required minlength="4"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control RegInput" placeholder="Username *" [formControl]="userNCtrl" required minlength="4"/>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control RegInput" placeholder="Your Email *" [formControl]="emailCtrl" required minlength="4" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control RegInput" placeholder="Your Phone *" [formControl]="phoneCtrl" required minlength="4"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control RegInput" placeholder="Password *" [formControl]="passwCtrl" required minlength="4"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control RegInput"  placeholder="Confirm Password *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <re-captcha  name="captcha" required [formControl]="captchaCtrl" siteKey="6LfNxqgUAAAAAOtZdmImEz-cChz3b3R75TmwdOTL"></re-captcha>
+                            </div>
+                            <input type="submit" class="btnRegister" [disabled]="!registerForm.valid" (click)="onSubmit(); registerForm.reset()" [routerLink]="['/login']" value="Sign Up"/>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </div>
+
+</div>
+
+<!--
+<div id="RegisterF">
+  <div id="RegisterForm1">
+    <div id="titleForm">   
+        <h3 id="regstColor">Create your Account</h3>
+    </div>
+  <small id="registerHelp" class="form-text text-muted">Personal Information</small>
+  <div id="RegisterForm">
     <form class="needs-validation" novalidate>
       <div class="form-row">
         <div class="col-xs-6" id="formRegLeft">
-          <label for="validationCustom01">First Name</label>
+          <label id="regstColor" for="validationCustom01">First Name</label>
           <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" #FirstN required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-xs-6" id="formRegRight">
-            <label for="validationCustom01">Last Name</label>
+            <label id="regstColor" for="validationCustom01">Last Name</label>
             <input type="text" class="form-control" id="validationCustom01" placeholder="Last Name" #LastN required>
             <div class="valid-feedback">
               Looks good!
@@ -22,39 +77,49 @@
       </div>
       <div class="form-row">
         <div class="col-xs-6" id="formRegLeft">
-          <label for="validationCustom02">Company</label>
-          <input type="text" class="form-control" id="validationCustom02" placeholder="Company" #Comp required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+              <label id="regstColor" for="validationCustom02">Email Address</label>
+              <input type="text" class="form-control" id="validationCustom02" placeholder="toucanair@gmail.com" #Email required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
         </div>
         <div class="col-xs-6" id="formRegRight">
-            <label for="validationCustom02">Phone Number</label>
+            <label id="regstColor" for="validationCustom02">Phone Number</label>
             <input type="text" class="form-control" id="validationCustom02" placeholder="(000)000-0000" #Phone required>
             <div class="valid-feedback">
               Looks good!
             </div>
         </div>
       </div>
+    </form>
+    </div>
+    <small id="registerHelp" class="form-text text-muted">Company Information</small>
+    <div id="RegisterForm">
+      <form class="needs-validation" novalidate>
       <div class="form-row">
-        <div class="col-xs-6" id="formRegLeft">
-          <label for="validationCustom02">Email Address</label>
-          <input type="text" class="form-control" id="validationCustom02" placeholder="toucanair@gmail.com" #Email required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
+          <div class="col-xs-6" id="formRegLeft">
+              <label id="regstColor" for="validationCustom02">Company</label>
+              <input type="text" class="form-control" id="validationCustom02" placeholder="Company" #Comp required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
         <div class="col-xs-6" id="formRegRight">
-            <label for="validationCustom02">Country</label>
+            <label id="regstColor" for="validationCustom02">Company Address</label>
             <input type="text" class="form-control" id="validationCustom02" placeholder="United States"  #Ctry required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
       </div>
+    </form>
+  </div> 
+  <small id="registerHelp" class="form-text text-muted">Account Information</small>
+  <div id="RegisterForm">
+      <form class="needs-validation" novalidate>
       <div class="form-row">
         <div class="col-xs-6" id="formRegLeft">
-          <label for="validationCustomUsername">Username</label>
+          <label id="regstColor" for="validationCustomUsername">Username</label>
           <div class="input-group">
             <input type="text" class="form-control" id="validationCustomUsername" placeholder=""  aria-describedby="inputGroupPrepend" #UserNa required>
             <div class="invalid-feedback">
@@ -63,7 +128,7 @@
           </div>
         </div> 
         <div class="col-xs-6" id="formRegRight">
-            <label for="validationCustomUsername">Password</label>
+            <label id="regstColor" for="validationCustomUsername">Password</label>
             <div class="input-group">
               <input type="text" class="form-control" id="validationCustomUsername" placeholder=""  aria-describedby="inputGroupPrepend"#PassWrd required>
               <div class="invalid-feedback">
@@ -72,7 +137,8 @@
             </div>
         </div>
       </div>  
-
+    </form>
+  </div> 
       <div class="form-group" >   
         <div class="form-check" id="terms">
           <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -88,6 +154,8 @@
       </div>
       <button id="back" class="btn btn-danger" type="button" [routerLink]="['']">Back</button>
       <button id="submReg" class="btn btn-success" type="submit" (click)="CreateUser(FirstN.value,LastN.value,Comp.value,Phone.value,Email.value,Ctry.value)" [routerLink]="['/LogIn']"> Submit </button>
-    </form>
-  </div>  
+    
+    </div>
+
 </div>  
+ -->

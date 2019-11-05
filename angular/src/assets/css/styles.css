@@ -31,6 +31,7 @@ image
     font-style: oblique;
    /* width: 15%;*/
    letter-spacing: 0.3em;
+   color: white;
    
 }
 
@@ -43,7 +44,7 @@ image
     height: 40px;
     z-index: 3;
     vertical-align: middle;
-    padding-right: 80px;
+    padding-right: 50px;
     padding-left: 20px;
 }
 
@@ -152,7 +153,7 @@ header nav ul li{
 }
 #terms{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 
@@ -206,36 +207,47 @@ header nav ul li{
 }
 
 /*************************REGISTER****************************/
-
+/*
 #RegisterForm{
-    margin: 0px 200px 0px 200px;
-    
-
-}#RegisterF{
-    background: url('/assets/img/airplane2.jpg') no-repeat center center;
-
+    margin: 0px 60px 20px 60px;
+    border-radius: 2%;
+    border-width: 10px;
 }
 
-#regst{
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: -40px;
+#RegisterForm1{
+    margin: 0px 460px 00px 460px;
+    border-width: 10px;
+    border: 2px solid;
+}
+
+#RegisterF{
+    background: white;
+}
+
+
+#registerHelp{
+    font-weight: bold; 
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    margin-left: 35px;
 }
 
 #formRegLeft{
     color: white;
-    width: 32%;
+    width: 40%;
     margin-right: 10%;
-    margin-left: 13%;
-    padding-top: 25px;
-    padding-bottom: 10px;
+    margin-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 25px;
     
 }
 #formRegRight{
-    width: 32%;
-    padding-top: 25px;
-    padding-bottom: 10px;
+    color: white;
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 25px;
 }
+
 #submReg{
     margin-left: 12%;
     margin-bottom: 35px;
@@ -247,6 +259,130 @@ header nav ul li{
     margin-bottom: 35px;
     margin-top: 20px;
 }
+*/
+#regst{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -18px;
+}
+
+#regstColor{
+    font-weight: bold; 
+    color: black;
+    font-family: 'Arimo', sans-serif;
+}
+
+#regstColor:hover{
+    color: red;
+}
+
+
+.RegInput{
+    border-radius: 10px !important;
+}
+.register-left{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 5%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 20%;
+    font-weight: bold;
+    color: #0c0d0e;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+  /* background: -webkit-linear-gradient(left, #ffffff, #000000, #ffffff);
+
+   /* background: #14131365;*/
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    border-top-right-radius: 10% 50%;
+    border-bottom-right-radius: 10% 50%;
+}
+.register-left i{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+    color: rgba(182, 16, 16, 0.836);
+}
+@-webkit-keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50px); }
+}
+@keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+    
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+    
+}
+
+.register-right{
+
+}
+
+.btnRegister{
+    float: right;
+    margin-top: 16%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: rgba(182, 16, 16, 0.836) ;
+    color:#fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #013806;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #380101;
+    border: 2px solid #380101;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #0c0d0e;
+
+}
+
 
 /*********************Wapper*********************/
 #contentAbout{
@@ -259,6 +395,7 @@ header nav ul li{
 
 #contentHome{
     width: 100%;
+
     box-shadow: 0px 0px 40px white;
  
 }
@@ -532,6 +669,14 @@ header nav ul li{
     scroll-behavior: smooth;
 }
 
+.contentProduct{
+    width: 100%;
+    box-shadow: 0px 0px 40px white;
+    background:  #fafafa;
+    transition: color 0.3s, height 0.5s, line-height 0.5s;
+    scroll-behavior: smooth;
+}
+
 /****************************Responsive***********************/
 @media screen and (max-width: 1330px){
     .caption2 {
@@ -612,6 +757,7 @@ header nav ul li{
 }
 
 #titleForm{
+    color: white;
     font-size: 16px;
     text-align: center;
     margin: 0px 40px 0px 40px;
@@ -1023,12 +1169,11 @@ header nav ul li{
 /*************************SHOP****************************/
 .search-box{
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: rgba(255, 255, 255, 0.705);
+    background: rgba(44, 33, 33, 0.705);
     height: 40px;
-    border-radius: 40px;
+    border-radius: 10px;
     padding: 10px;
 }
 /*
@@ -1043,20 +1188,23 @@ header nav ul li{
 
 }
 */
-.search-btn1{
-    color: rgba(231, 43, 43, 0.904);
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.705);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.4s;
+.searchzone{
+    background: rgba(146, 130, 130, 0.342);
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    padding-left: 35%;
 }
 
+.searchzone input{
+    height: 46px !important;
+    width: 55% !important;
+}
+.searchzone i{
+    margin-left: -40px;
+    cursor: pointer;
+}
 .search-txt1{
     border: none;
     background: none;
@@ -1071,7 +1219,7 @@ header nav ul li{
 }
 
 .caption8{
-    margin-top:2%;
+    margin-top:5%;
     left: 16%;
     z-index: 3;
     color: rgb(247, 233, 233);
