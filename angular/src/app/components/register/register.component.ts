@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.registerForm.value);
+    /*console.log(this.registerForm.value);*/
     this.RegisterService.insertNewUser(this.registerForm.value).subscribe(() => { 
       Swal.fire({
         type: 'success',
