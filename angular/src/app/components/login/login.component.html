@@ -1,140 +1,458 @@
 <section class="profile">
-  <div class="container touc-profile">
+  <div >
       <form method="post">
           <div class="row">
-              <div class="col-md-4">
-                  <div class="profile-img">
-                      <img src="assets\img\prueba2.jpg" alt="" />
-                      <div class="file btn btn-lg btn-primary">
-                          Change Photo
-                          <input type="file" name="file"/>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="profile-head">
-                              <h5>
-                                  Barbara Rodrigues
-                              </h5>
-                              <h6>
-                                  Web Developer and Designer Toucan Air
-                              </h6>
-                              <p class="profile-rating">REWARDS : <span>1000</span></p>
-                      <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item">
-                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Recent</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="col-md-2">
-                  <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" [routerLink]="['/LogIn']"/>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-md-4">
-                  <div class="profile-work">
-                      <p>LISTS</p>
-                      <a href="">Browsing History</a><br/>
-                      <a href="">Recently Viewed</a><br/>
-                      <a href="">Favorite Parts</a>
-                      <p>YOUR ORDERS</p>
-                      <a href="">Orders placed</a><br/>
-                      <a href="">Buy Again</a><br/>
-                      <a href="">Open Orders</a><br/>
-                      <a href="">Cancelled Orders</a><br/>
-                  </div>
-              </div>
-              <div class="col-md-8">
-                  <div class="tab-content profile-tab" id="myTabContent">
-                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <label>Username</label>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <p>barb2908</p>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <label>Name</label>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <p>Barbara Rodrigues</p>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <label>Email</label>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <p>barbara29rp@gmail.com</p>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <label>Phone</label>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <p>123 456 7890</p>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <label>Company</label>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <p>Toucan Air</p>
-                                      </div>
-                                  </div>
-                      </div>
-                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                  <div class="row">
-                                      <div class="card" style="width: 90%; margin-bottom: 25px">
-                                          <div class="card-header">
-                                            Parts
+                <div class="col-md-4">
+                        <div class="sidebar-item">
+                          <div class="page-wrapper chiller-theme toggled">
+                              <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+                                  <i class="fas fa-bars"></i>
+                              </a>
+                              <nav id="sidebar" class="sidebar-wrapper">
+                                      <div class="sidebar-content">
+                                        <div class="sidebar-header">
+                                          <div class="user-pic">
+                                            <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                                              alt="User picture">
                                           </div>
-                                          <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                          <div class="user-info">
+                                            <span class="user-name">{{user?.name}}
+                                              <strong>{{user?.lastn}}</strong>
+                                            </span>
+                                            <span class="user-role">Administrator</span>
+                                            <span class="user-status">
+                                              <i class="fa fa-circle"></i>
+                                              <span>Online</span>
+                                            </span>
+                                            <p class="profile-rating"><i class="fas fa-star " style="color: yellow;"></i>
+                                              REWARDS : <span>1000</span></p>
                                           </div>
                                         </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="card" style="width: 90%; margin-bottom: 25px">
-                                          <div class="card-header">
-                                            Quotes
-                                          </div>
-                                          <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                                          </div>
+                                        <!-- sidebar-header  -->
+                                        <div class="sidebar-menu">
+                                          <ul>
+                                            <li class="header-menu">
+                                              <span>General</span>
+                                            </li>
+                                            <li class="sidebar-dropdown">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                                 aria-controls="profile" aria-selected="false"><i class="fa fa-tachometer-alt">
+                                                </i>Recent
+                                                <!--<span class="badge badge-pill badge-warning">New</span>--></a>
+                                            </li>
+                                            <li class="sidebar-dropdown">
+                                                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" 
+                                                aria-controls="home" aria-selected="true"><i class="fa fa-user-alt"></i>Profile</a>
+                                             </li>
+                                             <li class="sidebar-dropdown">
+                                                <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" 
+                                                aria-controls="home" aria-selected="true"><i class="fa fa-map-pin"></i>Addresses</a>
+                                             </li>
+                                            <li class="sidebar-dropdown">
+                                              <a href="#">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <span>E-commerce</span>
+                                                <!--<span class="badge badge-pill badge-danger">3</span>>-->
+                                              </a>
+                                              <div class="sidebar-submenu">
+                                                <ul>
+                                                  <li>
+                                                    <a href="#">Products
+                                  
+                                                    </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Orders</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Credit cart</a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </li>
+                                            <li class="sidebar-dropdown">
+                                              <a href="#">
+                                                <i class="far fa-gem"></i>
+                                                <span>Components</span>
+                                              </a>
+                                              <div class="sidebar-submenu">
+                                                <ul>
+                                                  <li>
+                                                    <a href="#">General</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Panels</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Tables</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Icons</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Forms</a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </li>
+                                            <li class="sidebar-dropdown">
+                                              <a href="#">
+                                                <i class="fa fa-chart-line"></i>
+                                                <span>Charts</span>
+                                              </a>
+                                              <div class="sidebar-submenu">
+                                                <ul>
+                                                  <li>
+                                                    <a href="#">Pie chart</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Line chart</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Bar chart</a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">Histogram</a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </li>
+                                            
+                                            <li class="header-menu">
+                                              <span>Extra</span>
+                                            </li>
+                                            <li>
+                                              <a href="#">
+                                                <i class="fa fa-book"></i>
+                                                <span>Documentation</span>
+                                               <!-- <span class="badge badge-pill badge-primary">Beta</span>-->
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#">
+                                                <i class="fa fa-calendar"></i>
+                                                <span>Calendar</span>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#">
+                                                <i class="fa fa-folder"></i>
+                                                <span>Examples</span>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a (click)="deleteUser()">
+                                                <i class="fa fa-user-times"></i>
+                                                <span>Delete Account</span>
+                                              </a>
+                                            </li>
+                                          </ul>
                                         </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="card" style="width: 90%; margin-bottom: 25px">
-                                          <div class="card-header">
-                                            Pending
-                                          </div>
-                                          <div class="card-body">
-                                              <blockquote class="card-text">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                              </blockquote>
-                                          </div>
+                                        <!-- sidebar-menu  -->
                                       </div>
-                                  </div>
-                          <div class="row">
+                                      <!-- sidebar-content  
+                                      <div class="sidebar-footer">
+                                        <a href="#">
+                                          <i class="fa fa-bell"></i>
+                                          <span class="badge badge-pill badge-warning notification">3</span>
+                                        </a>
+                                        <a href="#">
+                                          <i class="fa fa-envelope"></i>
+                                          <span class="badge badge-pill badge-success notification">7</span>
+                                        </a>
+                                        <a href="#">
+                                          <i class="fa fa-cog"></i>
+                                          <span class="badge-sonar"></span>
+                                        </a>
+                                        <a href="#">
+                                          <i class="fa fa-power-off"></i>
+                                        </a>
+                                      </div>-->
+                                    </nav>
                           </div>
-                      </div>
-                  </div>
-              </div>
+      
+      
+      <!-- 
+                            <div class="make-me-stiky">
+                                  <h6>LISTS</h6>
+                                  <a href="">Browsing History</a><br/>
+                                  <a href="">Recently Viewed</a><br/>
+                                  <a href="">Favorite Parts</a><br/>
+                                  <h6>YOUR ORDERS</h6>
+                                  <a href="">Orders placed</a><br/>
+                                  <a href="">Buy Again</a><br/>
+                                  <a href="">Open Orders</a><br/>
+                                  <a href="">Cancelled Orders</a><br/>
+                                  <br/>
+                                  <br/>
+                              <button style="margin-left: 55%; margin-top: 5%" type="button" class="btn btn-danger"  data-dismiss="modal" [disabled]="!captchaCtrl.valid" (click)="deleteUser()">Delete Account</button> 
+
+                            </div>-->
+                          </div>
+                    </div>
+                <div class="col-md-8">
+                       <!-- <div class="profile-head">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                      <li class="nav-item">
+                                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Recent</a>
+                                      </li> 
+                                      <li class="nav-item">
+                                        
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false">Addresses</a>
+                                      </li>
+                                </ul>
+                            </div>-->
+                            <div class="col-md-8" style="margin-top: 40px;">
+                              <form  [formGroup]="userForm" (ngSubmit)="modifyUser()">
+                                <div class="tab-content profile-tab form-group" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row">
+                                                      <br/>
+                                                      <br/>
+                                                    <div class="col-md-2">
+                                                        <label>First Name</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                          <input type="text" class="form-control" id="firstname" name="firstname" [formControl]="FirstnameCtrl" formControlName="first_name" value="{{user?.name}}" pattern="[a-zA-Z]*" required>
+                                                          <div *ngIf="FirstnameCtrl.invalid && FirstnameCtrl.dirty" >
+                                                              <div *ngIf="FirstnameCtrl.errors.pattern" class="alert alert-danger">
+                                                                  Please insert alphabetical letters
+                                                              </div> 
+                                                              <div *ngIf="FirstnameCtrl.errors.required" class="alert alert-danger">
+                                                                  Please insert your first name
+                                                              </div> 
+                                                          </div>
+                                                          <div *ngIf="FirstnameCtrl.dirty" class="alert alert-success">
+                                                               <div *ngIf="FirstnameCtrl.dirty">
+                                                                      <small> This will be change if you press "Edit Profile" </small>
+                                                               </div>
+                                                          </div>
+                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                      <br/>
+                                                      <br/>
+                                                    <div class="col-md-2">
+                                                        <label>Last Name</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                         <input type="text" class="form-control" id="lastname" name="lastname" [formControl]="LastnameCtrl" formControlName="last_name" pattern="[a-zA-Z ]*" value="{{user?.lastn}}" required>
+                                                         <div *ngIf="LastnameCtrl.invalid && LastnameCtrl.dirty" >
+                                                              <div *ngIf="LastnameCtrl.errors.pattern" class="alert alert-danger">
+                                                                  Please insert alphabetical letters
+                                                              </div> 
+                                                              <div *ngIf="LastnameCtrl.errors.required" class="alert alert-danger">
+                                                                  Please insert your last name
+                                                              </div> 
+                                                          </div>
+                                                          <div *ngIf="LastnameCtrl.dirty" class="alert alert-success">
+                                                               <div *ngIf="LastnameCtrl.dirty">
+                                                                      <small> This will be change if you press "Edit Profile" </small>
+                                                               </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                      <br/>
+                                                      <br/>
+                                                    <div class="col-md-2">
+                                                        <label>Email</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                          <input type="text" class="form-control" id="email" name="email" [formControl]="EmailCtrl" formControlName="email" value="{{user?.email}}" required>
+                                                          <div *ngIf="EmailCtrl.invalid && EmailCtrl.dirty" >
+                                                              <div *ngIf="EmailCtrl.errors.email" class="alert alert-danger">
+                                                                  Introduce a Correct Email Address
+                                                              </div> 
+                                                              <div *ngIf="EmailCtrl.errors.required" class="alert alert-danger">
+                                                                      Please insert your email
+                                                              </div> 
+                                                          </div>
+                                                          <div *ngIf="EmailCtrl.dirty" class="alert alert-success">
+                                                              <div *ngIf="EmailCtrl.dirty">
+                                                                  <small> This will be change if you press "Edit Profile" </small>
+                                                              </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                      <br/>
+                                                      <br/>
+                                                    <div class="col-md-2">
+                                                        <label>Phone</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="phone" name="phone" [formControl]="PhoneCtrl" formControlName="phone_number" pattern="[0-9]+" value="{{user?.phone}}" required>
+                                                        <div *ngIf="PhoneCtrl.invalid && PhoneCtrl.dirty" >
+                                                            <div *ngIf="PhoneCtrl.errors.pattern" class="alert alert-danger">
+                                                                Introduce a Correct Phone Number
+                                                            </div>
+                                                            <div *ngIf="PhoneCtrl.errors.required" class="alert alert-danger">
+                                                                  Please insert your phone number
+                                                            </div>  
+                                                        </div>
+                                                        <div *ngIf="PhoneCtrl.dirty" class="alert alert-success">
+                                                            <div *ngIf="PhoneCtrl.dirty">
+                                                                <small> This will be change if you press "Edit Profile" </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="row">
+                                                          <br/>
+                                                          <br/>
+                                                      <div class="col-md-2">
+                                                          <label>Username</label>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <input type="text" class="form-control" id="username" name="usern" [formControl]="UsernameCtrl" formControlName="username" value="{{user?.usern}}" minlength="8" required>
+                                                          <div *ngIf="UsernameCtrl.invalid && UsernameCtrl.dirty" >
+                                                              <div *ngIf="UsernameCtrl.errors.minlength" class="alert alert-danger">
+                                                                  Username must be at least 8 characters long
+                                                              </div> 
+                                                              <div *ngIf="UsernameCtrl.errors.required" class="alert alert-danger">
+                                                                  Please insert your username
+                                                              </div>  
+                                                          </div>
+                                                          <div *ngIf="UsernameCtrl.dirty" class="alert alert-success">
+                                                              <div *ngIf="UsernameCtrl.dirty">
+                                                                  <small> This will be change if you press "Edit Profile" </small>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row col-md-6" style="color: #007bff; margin-top: 40px; margin-bottom: 10px;">
+                                                      <h6> Change Password</h6>
+                                                  </div>
+                                                  <div class="row ">
+                                                      <div class="col-md-2">
+                                                          <label>Password</label>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <input type="password" class="form-control" id="password" name="password" [formControl]="PasswordCtrl" formControlName="passw" value="{{user?.passw}}" minlength="8" required 
+                                                          onmousedown="this.type='text'"
+                                                          onmouseup="this.type='password'"
+                                                          onmousemove="this.type='password'">
+                                                          <div *ngIf="PasswordCtrl.invalid" >
+                                                              <div *ngIf="PasswordCtrl.errors.minlength " class="alert alert-danger">
+                                                                  Password must be at least 8 characters long
+                                                              </div> 
+                                                              
+                                                          </div>
+                                                          <div *ngIf="PasswordCtrl.dirty" >
+                                                              <div *ngIf="PasswordCtrl.dirty " class="alert alert-success">
+                                                                  <small> This will be change if you press "Edit Profile" </small>
+                                                              </div>
+                                                          </div>                                          
+                                                      </div>
+                                                  </div>
+                                                  <small id="passwHelp" class="form-text text-muted" style="margin-left: 18%;">
+                                                          Press and Hold inside the box</small>
+              
+                                                  <div class="row" style="margin-top: 10px;">
+                                                      <div class="col-md-2">
+                                                          <label>Confirm Password</label>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <input type="password" class="form-control" id="confpassw" name="confpassw" [formControl]="PasswordConfCtrl" minlength="8" onmousedown="this.type='text'" onmouseup="this.type='password'" onmousemove="this.type='password'" required>
+                                                             
+                                                          <div *ngIf="PasswordConfCtrl.invalid && PasswordCtrl.dirty"
+                                                              class="alert alert-danger" >
+                                                              <div *ngIf="PasswordCtrl.dirty">
+                                                                  Password must be confirmed
+                                                              </div>
+                                                          </div> 
+                                                          <div *ngIf="PasswordCtrl.dirty && (PasswordCtrl.value == PasswordConfCtrl.value)"   class="alert alert-success">
+                                                                  <small>Password Matches. This will be change if you press "Edit Profile" </small>
+                                                          </div>
+                                                          <div class="form-group" style="margin-top: 8%;">
+                                                              <re-captcha name="captcha" required [formControl]="captchaCtrl" siteKey="6LfNxqgUAAAAAOtZdmImEz-cChz3b3R75TmwdOTL">
+                                                              </re-captcha>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row" style="margin-left: 55%; margin-top: 5%">
+                                                          <button type="button" class="btn btn-success" id="close-modal" data-dismiss="modal"
+                                                           (click)="modifyUser(user?.name,user?.lastn,user?.email,user?.phone,user?.usern,user?.passw)" [disabled]="!captchaCtrl.valid" >Edit Profile</button>
+                                                  </div>
+                                                  <small id="editHelp" class="form-text text-muted" style="margin-top: 5%;">
+                                                          If you need to modify your personal info. you just have to rewrite where your current information is located</small>
+                                    </div>
+              
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                <div class="row">
+                                                    <div class="card" style="width: 90%; margin-bottom: 25px">
+                                                        <div class="card-header">
+                                                          Parts
+                                                        </div>
+                                                        <div class="card-body">
+                                                          <h5 class="card-title">Special title treatment</h5>
+                                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="card" style="width: 90%; margin-bottom: 25px">
+                                                        <div class="card-header">
+                                                          Quotes
+                                                        </div>
+                                                        <div class="card-body">
+                                                          <h5 class="card-title">Special title treatment</h5>
+                                                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="card" style="width: 90%; margin-bottom: 25px">
+                                                        <div class="card-header">
+                                                          Pending
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <blockquote class="card-text">
+                                                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                                            </blockquote>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div class="row">
+                                        </div>
+                                    </div>
+              
+              
+                                    <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+                                          <div class="row">
+                                              <div class="col-md-6" style="margin-top: 10px;">
+                                                  <label>Billing Address</label>
+                                              </div>
+                                              <div class="col-md-6" class="form-control">
+                                                  <p>barb2908</p>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-md-6"  style="margin-top: 10px;">
+                                                  <label> Shipping Address</label>
+                                              </div>
+                                              <div class="col-md-6" class="form-control">
+                                                  <p>Barbara Rodrigues</p>
+                                              </div>
+                                          </div>                          
+                                      </div>
+              
+                                </div>
+              
+                              </form>
+                            </div>
+                </div>
+                
           </div>
+          
+              
+              
+          
       </form>           
   </div>
 </section>

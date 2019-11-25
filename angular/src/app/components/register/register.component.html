@@ -1,5 +1,5 @@
 <div  class="register" >
-    <div class="row">
+    <div class="row regRight">
         <div class="col-4 register-left">
             <i class="fas fa-plane fa-5x" alt=""></i>
             <!--<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>-->
@@ -11,44 +11,131 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Create your Account</h3>
-                    <div class="row register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <form class="row register-form " [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div class="col-md-6">
                             <div class="form-group RegInput">
-                                <input type="text" class="form-control RegInput" placeholder="First Name *" [formControl]="firstNCtrl" required minlength="4"/>
+                                <input type="text" class="form-control RegInput" placeholder="First Name *" pattern="[a-zA-Z ]*" [formControl]="firstNCtrl" required minlength="2"/>
+                            
+                                <div *ngIf="firstNCtrl.invalid && (firstNCtrl.dirty || firstNCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="firstNCtrl.errors.required">
+                                    First Name is Required
+                                  </div>
+                                  <div *ngIf="firstNCtrl.errors.minlength">
+                                    First name must be at least 2 characters long.
+                                  </div>
+                                  <div *ngIf="firstNCtrl.errors.pattern">
+                                    Please insert alphabetical letters
+                                  </div>
+                                </div>
+                            
+                              </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control RegInput" placeholder="Last Name *" pattern="[a-zA-Z ]*" [formControl]="lastNCtrl" required minlength="4"/>
+
+                                <div *ngIf="lastNCtrl.invalid && (lastNCtrl.dirty || lastNCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="lastNCtrl.errors.required">
+                                    Last name is Required
+                                  </div>
+                                  <div *ngIf="lastNCtrl.errors.minlength">
+                                    Last name must be at least 2 characters long
+                                  </div>
+                                  <div *ngIf="lastNCtrl.errors.pattern">
+                                    Please insert alphabetical letters
+                                  </div>
+                                </div>
+
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control RegInput" placeholder="Last Name *" [formControl]="lastNCtrl" required minlength="4"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control RegInput" placeholder="Username *" [formControl]="userNCtrl" required minlength="4"/>
-                            </div>
+                                <input type="text" class="form-control RegInput" placeholder="Username *" [formControl]="userNCtrl" required minlength="8"/>
+
+                                <div *ngIf="userNCtrl.invalid && (userNCtrl.dirty || userNCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="userNCtrl.errors.required">
+                                    Username is Required
+                                  </div>
+                                  <div *ngIf="userNCtrl.errors.minlength">
+                                    Username must be at least 8 characters long
+                                  </div>
+                                </div>
+                            
+                              </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control RegInput" placeholder="Your Email *" [formControl]="emailCtrl" required minlength="4" />
+                                <input name="email" type="email" class="form-control RegInput" placeholder="Your Email *" [formControl]="emailCtrl" required/>
+
+                                <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="emailCtrl.errors.required">
+                                    Username is Required
+                                  </div>
+                                  <div *ngIf="emailCtrl.errors.email">
+                                      Introduce a Correct Email Address
+                                  </div>
+                                </div>
+
                             </div>
                             <div class="form-group">
-                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control RegInput" placeholder="Your Phone *" [formControl]="phoneCtrl" required minlength="4"/>
-                            </div>
+                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control RegInput" pattern="[0-9]+" placeholder="Your Phone *" [formControl]="phoneCtrl" required minlength="10"/>
+                                
+                                <div *ngIf="phoneCtrl.invalid && (phoneCtrl.dirty || phoneCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="phoneCtrl.errors.required">
+                                    Phone Number is Required
+                                  </div>
+                                  <div *ngIf="phoneCtrl.errors.minlength">
+                                    Introduce a correct Phone Number
+                                  </div>
+                                  <div *ngIf="phoneCtrl.errors.pattern">
+                                      Introduce a Correct Phone Number
+                                  </div>
+                                </div>
+                            
+                              </div>
                             <div class="form-group">
-                                <input type="password" class="form-control RegInput" placeholder="Password *" [formControl]="passwCtrl" required minlength="4"/>
-                            </div>
+                                <input type="password" class="form-control RegInput" placeholder="Password *" [formControl]="passwCtrl" required minlength="8"  onmouseup="this.type='password'" onmousemove="this.type='password'"/>
+
+                                <div *ngIf="passwCtrl.invalid && (passwCtrl.dirty || passwCtrl.touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="passwCtrl.errors.required">
+                                    Password is Required
+                                  </div>
+                                  <div *ngIf="passwCtrl.errors.minlength">
+                                    Password must be longer that 8 characters.
+                                  </div>
+                                </div>
+
+                              </div>
+                              
                             <div class="form-group">
-                                <input type="password" class="form-control RegInput"  placeholder="Confirm Password *" value="" />
+                                <input type="password" class="form-control RegInput"  placeholder="Confirm Password *" [formControl]="passConfCtrl" onmouseup="this.type='password'" onmousemove="this.type='password'" />
+
+                                <div *ngIf="passConfCtrl.invalid && passwCtrl.dirty "
+                                  class="alert alert-danger">
+                                  <div *ngIf="passwCtrl.dirty">
+                                    Password must be confirmed
+                                  </div>
+                                </div>
+                                <div *ngIf="(passwCtrl.value == passConfCtrl.value) && passwCtrl.dirty" class="alert alert-success">
+                                    Passwords matches
+                                </div>
+                      
+
                             </div>
                             <div class="form-group">
                                 <re-captcha  name="captcha" required [formControl]="captchaCtrl" siteKey="6LfNxqgUAAAAAOtZdmImEz-cChz3b3R75TmwdOTL"></re-captcha>
-                            </div>
-                            <input type="submit" class="btnRegister" [disabled]="!registerForm.valid" (click)="onSubmit(); registerForm.reset()" [routerLink]="['/login']" value="Sign Up"/>
+                            </div>  
+                      <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid" (click)="onSubmit(); registerForm.reset()" routerLink="/shopForParts">Sign Up</button>
                         </div>
-                    </div>
+                      </form>
                   </div>
-            </div>
+              </div>
+          </div>
         </div>
     </div>
-
-</div>
 
 <!--
 <div id="RegisterF">

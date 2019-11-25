@@ -1,12 +1,11 @@
 export class UserModel {
-    Id: string;
-    FirstName: string;
-    LastName: string;
-    Company: string;
-    Phone: string;
-    Email: string;
-    Country: string;
-    Username: string;
-    Password: string;
-
+   constructor(
+    public UserId: number,
+    public FirstName: string,
+    public LastName: string,
+    public Phone: string,
+    public Email: string,
+    public Username: string,
+    public Password: string
+   ){}   
 }

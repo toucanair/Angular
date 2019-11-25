@@ -14,7 +14,6 @@ export class ContactComponent implements OnInit {
   longitude: number = -80.163417;
 
   
- 
 
   emailForm : FormGroup;
   nameCtrl: FormControl;

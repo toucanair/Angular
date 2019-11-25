@@ -12,12 +12,13 @@
       [ngClass]="{ 'show': navbarOpen }">
         <ul class="navbar-nav mr-auto" data-toggle="collapse" data-target=".nav-collapse">
             <li class="nav-item dropdown center" data-toggle="collapse" data-target=".navbar-collapse.show">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">About</a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true" *ngIf="!logIn">About</a>
                 <div class="dropdown-menu" >
                   <a class="dropdown-item" routerLink="/about" >Toucan Air </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" routerLink="/team" >Our Team</a>
                 </div>
+                <a class="nav-link" routerLink="/login" href="#" *ngIf="logIn" >Profile</a>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link" routerLink="/quality"  >Quality</a>
@@ -36,7 +37,8 @@
             </form>
             </li>
             <li class="nav-item" id="login">
-               <a class="nav-link" (click)="ShowLogin()" >Log In</a>
+               <a class="nav-link" (click)="ShowLogin()" *ngIf="!logIn" >Log In</a>
+               <a class="nav-link" (click)="logout()" href="#" *ngIf="logIn" >Logout</a>
             </li>
         </ul>
       </div>
@@ -51,13 +53,13 @@
               </button>
             </div>
             <div class="modalBody">
-                <form>
-                  <p>What is your Username or Email Address?</p>
-                  <input type="text" name="user" placeholder="ToucanAir or toucanair@gmail.com"  #userN>
+                <form [formGroup]="validateLoginForm" (ngSubmit)="OnLogin()">
+                  <p>What is your Username?</p>
+                  <input type="text" name="user" placeholder="Username" [formControl]="usernCtrl" required>
                   <small id="emailHelp" class="form-text text-muted">Have a Toucan Air account? You can see better offers.</small>
                   <p>What is  your Password?</p>
                   <div id="passw">
-                    <input type="password" name="passw" placeholder="Password" #passW>
+                    <input type="password" name="passw" placeholder="Password" [formControl]="pswCtrl" required>
                     <a id="forgot" href="#" data-toggle="collapse">Forgot Password?</a>
                   </div>
                 </form>
@@ -73,7 +75,7 @@
             </div>
             <div class="modalFooter">
                   <button type="button" class="btn btn-danger" id="close-modal" data-dismiss="modal" (click)="HideLogin()">Cancel</button>
-                  <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="ValidateLogin(userN.value,passW.value)" [routerLink]="['/login']">Continue</button>
+                  <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="OnLogin(); HideLogin()">Continue</button>
             </div>        
 </ng-template>
 

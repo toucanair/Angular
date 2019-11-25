@@ -17,6 +17,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { MessageService } from './services/message.service';
 import { RegisterService } from './services/register.service';
+import { LoginService } from './services/login.service';
 import { from } from 'rxjs';
 
 
@@ -44,6 +45,7 @@ import { from } from 'rxjs';
   providers: [
     MessageService,
     RegisterService,
+    LoginService,
     {provide:LocationStrategy,useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
