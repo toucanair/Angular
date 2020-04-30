@@ -24,7 +24,7 @@
     "angular-google-recaptcha": "^1.0.3",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "ng-recaptcha": "^4.3.0",
     "ngx-bootstrap": "^4.1.1",
     "ngx-smart-popover": "^1.0.8",
